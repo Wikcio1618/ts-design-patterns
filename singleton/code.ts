@@ -2,11 +2,11 @@ export class CacheSingleton {
     private static _instance: CacheSingleton;
 
     private constructor() { }
-    public static get getInstance(): CacheSingleton {
-        if (!CacheSingleton.instance) {
-            CacheSingleton.instance = new CacheSingleton();
+    public static get instance(): CacheSingleton {
+        if (!CacheSingleton._instance) {
+            CacheSingleton._instance = new CacheSingleton();
         }
-        return CacheSingleton.instance;
+        return CacheSingleton._instance;
     }
     public static set instance(value: CacheSingleton) {
         CacheSingleton._instance = value;
