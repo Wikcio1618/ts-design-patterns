@@ -1,4 +1,4 @@
-# Builder
+# Singleton
 ## Structure
 ![](../images/singleton_structure.png)
 

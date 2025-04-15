@@ -1,4 +1,4 @@
-# Builder
+# Prototype
 ## Structure
 |                Structure                |           Prototype registry            |
 | :-------------------------------------: | :-------------------------------------: |
