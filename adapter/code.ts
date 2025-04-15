@@ -2,12 +2,21 @@
 // Class adapter requires mulitple inheritance which is not supperted in TypeScript
 
 // Client code works with european units
-interface EuropeanCar {
+export interface EuropeanCar {
     timeDelta: number
     getSISpeed(tempDistance: number): number
 }
 
-class AmericanCar {
+export class ConcreteEuropeanCar implements EuropeanCar{
+    constructor(public timeDelta: number) { }
+
+    getSISpeed(tempDistance: number): number {
+        return tempDistance / this.timeDelta
+    }
+
+}
+
+export class AmericanCar {
     constructor(private timeDelta: number) { }
     getImperialSpeed(tempDistance: number): number {
         return tempDistance / this.timeDelta
@@ -15,7 +24,7 @@ class AmericanCar {
 }
 
 
-class AmericanCarAdapter implements EuropeanCar {
+export class AmericanCarAdapter implements EuropeanCar {
 
     constructor(private adaptee: AmericanCar, public timeDelta: number) { }
 
