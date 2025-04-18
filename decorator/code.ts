@@ -18,7 +18,7 @@ export class AuthorizationDecorator extends BaseDecorator {
             console.log("Unauthorized access attempt");
             return;
         }
-        this.wrappee.run()
+        super.run()
     }
 }
 
@@ -26,7 +26,7 @@ export class LoggingDecorator extends BaseDecorator {
     constructor(private wrappee: ComputingComponent) { super(wrappee) }
     run(): void {
         console.log("Logging start");
-        this.wrappee.run();
+        super.run();
         console.log("Logging end");
     }
 }
