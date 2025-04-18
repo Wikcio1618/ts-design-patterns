@@ -12,7 +12,7 @@ export class BaseDecorator implements ComputingComponent {
 }
 
 export class AuthorizationDecorator extends BaseDecorator {
-    constructor(private wrappee: ComputingComponent, private user: string) { super(wrappee) }
+    constructor(wrappee: ComputingComponent, private user: string) { super(wrappee) }
     run(): void {
         if (this.user !== "admin") {
             console.log("Unauthorized access attempt");
@@ -23,7 +23,7 @@ export class AuthorizationDecorator extends BaseDecorator {
 }
 
 export class LoggingDecorator extends BaseDecorator {
-    constructor(private wrappee: ComputingComponent) { super(wrappee) }
+    constructor(wrappee: ComputingComponent) { super(wrappee) }
     run(): void {
         console.log("Logging start");
         super.run();
